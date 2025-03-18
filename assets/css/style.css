@@ -9,6 +9,7 @@ body {
     font-weight: 300;
 }
 img {
+    display: block;
     max-width: 100%;
 }
 a {
@@ -30,9 +31,6 @@ b {
     /* padding: 5px; */
     background-color: #ff000022;
     border: 2px dashed red;
-}
-.card-media {
-    background-color: #333;
 }
 
 
@@ -298,8 +296,9 @@ footer.page-footer a {
     }
 }
 @media screen and (min-width: 992px) {
-    /* UTILITY */
     .container {
+        text-align: left;
+        /* max-width: 90%; */
         max-width: 1140px;
     }
     .display-lg-inline-block {
@@ -323,8 +322,19 @@ footer.page-footer a {
         /* display: block; */
         display: list-item;
     }
+    .page-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-info {
+        text-align: left;
+    }
 }
 
-.card-media {
-    height: auto !important;    
-}
+
+/* Breakpoint a cui farei la seguente modifica (lasciando 90% ai 992px) */
+/* @media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+} */
