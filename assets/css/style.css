@@ -102,6 +102,11 @@ section {
     border: 0;
 }
 /* AGGIUNTE */
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
 .display-none {
     display: none;
 }
@@ -174,6 +179,9 @@ main {
     margin-bottom: 1rem;
 }
 /* #social-buttons */
+#social-buttons {
+    padding: 0;
+}
 #social-buttons .btn-social {
     width: 100%;
     text-align: center;
@@ -205,4 +213,25 @@ main {
 /* #advertisement */
 #advertisement img {
     width: 100%;
+}
+/* #presentation */
+#presentation h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    position: relative;
+    padding-bottom: .5rem;
+}
+#presentation h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #FF9614;
+    width: 4ch;
+}
+#presentation img {
+    max-width: 70%;
+    display: block;
+    margin: 1rem auto;
 }
