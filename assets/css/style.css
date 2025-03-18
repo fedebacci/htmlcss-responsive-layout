@@ -127,7 +127,7 @@ section {
 }
 
 
-/* HEADER */
+/* header.page-header */
 h1 {
     font-size: 2.25rem;
     text-transform: uppercase;
@@ -234,4 +234,23 @@ main {
     max-width: 70%;
     display: block;
     margin: 1rem auto;
+}
+/* footer.page-footer */
+footer.page-footer {
+    background-color: #7C69A4;
+    color: #fff;
+    padding: 1rem;
+    font-size: .7rem;
+    text-align: center;
+    font-weight: normal;
+}
+.page-footer p.agency {
+    font-weight: bold;
+}
+.page-footer li {
+    display: inline-block;
+    margin: .5rem;
+}
+.page-footer li a {
+    text-decoration: underline;
 }
