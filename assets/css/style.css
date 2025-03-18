@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+}
 img {
     max-width: 100%;
 }
@@ -21,7 +24,7 @@ ul {
 .debug ,
 .debug * {
     min-height: 50px;
-    padding: 5px;
+    /* padding: 5px; */
     background-color: #ff000022;
     border: 2px dashed red;
 }
@@ -40,17 +43,19 @@ section {
     padding: calc(2 * var(--col-spacing)) 0;
 }
 .container {
-    max-width: 1200px;
+    /* Partendo da mobile cambio questo valore e lo vado a sovrascrivere nelle media query */
+    /* max-width: 1200px; */
+    max-width: 90%;
     margin: 0 auto;
 }
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin: calc(var(--col-spacing) * -1) 0;
+    margin: 0 calc(var(--col-spacing) * -1);
     row-gap: calc(2 * var(--col-spacing));
 }
 .row [class*="col"] {
-    padding: var(--col-spacing) 0;
+    padding: 0 var(--col-spacing);
 }
 .row-no-gap {
     display: flex;
@@ -95,4 +100,66 @@ section {
     display: inline-block;
     background-color: transparent;
     border: 0;
+}
+/* AGGIUNTE */
+.display-none {
+    display: none;
+}
+/* @ TODO */
+/* Spostare insieme a tutte le altre media query */
+@media screen and (min-width: 768px) {
+    .display-md-inline-block {
+        display: inline-block;
+    }
+}
+
+
+/* HEADER */
+h1 {
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Nerko One', cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #FF9614;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+
+
+/* MAIN */
+main {
+    background-color: #F6F5F3;
+}
+#recipe-preview p.recipe-category {
+    text-transform: uppercase;
+    font-size: .8rem;
+    color: #A7A19F;
+}
+#recipe-preview h2 {
+    color: #4E3969;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+/* @ TODO */
+/* Forse spostare regole sotto relative a card in utility? */
+/* Dipende, devo decidere se dare a .card tutte le classi comuni tra questa e bottoni social e poi differenziarli con regole specfiche, oppure se trattare i bottoni social come cosa completamente differente da card (Parto in secondo modo e le accorpo se vedo molte somiglianze) */
+.card {
+    background-color: #fff;
+    border-radius: .33rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.33);
+}
+.card-details {
+    padding: 0 1rem 1rem;
+}
+.card h3 {
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+.card ul {
+    font-size: .8rem;
+}
+.card ul li:not(:last-child) {
+    margin-bottom: 1rem;
 }
