@@ -111,6 +111,9 @@ section {
     .display-md-inline-block {
         display: inline-block;
     }
+    .display-md-block {
+        display: block;
+    }
 }
 @media screen and (min-width: 992px) {
     .display-lg-inline-block {
@@ -198,4 +201,8 @@ main {
 }
 .fa-youtube {
     color: #E52121;
+}
+/* #advertisement */
+#advertisement img {
+    width: 100%;
 }
