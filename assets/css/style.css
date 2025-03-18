@@ -101,6 +101,8 @@ section {
     width: calc(100% / 6 * 5);
 }
 .btn {
+    font-family: inherit;
+    cursor: pointer;
     display: inline-block;
     background-color: transparent;
     border: 0;
@@ -150,28 +152,29 @@ main {
 #recipe-preview p.recipe-category {
     text-transform: uppercase;
     font-size: .8rem;
+    font-weight: normal;
     color: #A7A19F;
 }
 #recipe-preview h2 {
     color: #4E3969;
     font-size: 1.1rem;
     margin: .5rem 0 .75rem;
-    font-weight: bold;
+    font-weight: 800;
 }
-/* @ TODO */
-/* Forse spostare regole sotto relative a card in utility? */
-/* Dipende, devo decidere se dare a .card tutte le classi comuni tra questa e bottoni social e poi differenziarli con regole specfiche, oppure se trattare i bottoni social come cosa completamente differente da card (Parto in secondo modo e le accorpo se vedo molte somiglianze) */
 .card {
     background-color: #fff;
     border-radius: .33rem;
     box-shadow: 0 0 10px rgba(0,0,0,0.33);
 }
+.card-media img {
+    width: 100%;
+}
 .card-details {
-    padding: 0 1rem 1rem;
+    padding: 1rem;
 }
 .card h3 {
     font-size: 1rem;
-    margin: 1rem 0;
+    margin: 0 0 1.5rem;
 }
 .card ul {
     font-size: .8rem;
@@ -218,7 +221,7 @@ main {
 /* #presentation */
 #presentation h2 {
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: 500;
     position: relative;
     padding-bottom: .5rem;
     margin-bottom: 1rem;
@@ -247,10 +250,10 @@ footer.page-footer {
     font-weight: normal;
 }
 footer.page-footer p {
-    font-size: .7rem !important;
+    font-size: .7rem;
 }
 footer.page-footer a {
-    font-size: .7rem !important;
+    font-size: .7rem;
 }
 .page-footer p.agency {
     font-weight: bold;
@@ -275,6 +278,11 @@ footer.page-footer a {
         display: block;
     }
 
+    /* Generali */ 
+    p {
+        font-size: 1rem;
+    }
+
     /* Header */
     h1 {
         text-align: left;
@@ -282,38 +290,76 @@ footer.page-footer a {
     }
 
     /* #recipe-preview */
+    #recipe-preview p.recipe-category {
+        font-size: .9rem;
+    }
+    #recipe-preview h2 {
+        font-size: 2rem;
+    }
+    .card-details {
+        padding: 2rem;
+    }
+    .card h3 {
+        font-size: 1.25rem;
+        margin: 0 0 2.5rem;
+    }
     #recipe-preview ul li {
         display: inline-block;
         min-width: 33%;
         padding-right: 1rem;
+        font-size: .9rem;
     }
 
     /* #presentation */
+    #presentation {
+        padding-top: 0;
+        padding-bottom: 5rem;
+    }
+    #presentation h2 {
+        font-size: 1.75rem;
+    }
     #presentation img {
         max-width: 300px;
         float: left;
         margin: 0 .75rem 0 0;
     }
+
+    /* FOOTER */
+    footer.page-footer p,
+    footer.page-footer a {
+        font-size: .8rem;
+    }
+    .page-footer p.agency {
+        margin-bottom: .25rem;
+    }
 }
 @media screen and (min-width: 992px) {
+    /* UTILITY */
     .container {
         text-align: left;
-        /* max-width: 90%; */
-        max-width: 1140px;
+        max-width: 90%;
+        /* max-width: 1140px; */
     }
     .display-lg-inline-block {
         display: inline-block;
     }
+    /* GENERALI */
+    p {
+        font-size: 1.1rem;
+    }
 
     /* #recipe-preview */
+    #recipe-preview p.recipe-category {
+        font-size: 1rem;
+    }
+    #recipe-preview h2 {
+        font-size: 3rem;
+    }
     #recipe-preview .card {
         display: flex;
     }
     #recipe-preview .card-media {
         width: 70%;
-    }
-    #recipe-preview .card-media img {
-        width: 100%;
     }
     #recipe-preview .card-details {
         width: 30%;
@@ -322,19 +368,36 @@ footer.page-footer a {
         /* display: block; */
         display: list-item;
     }
-    .page-footer {
+
+    /* #presentation */
+    #presentation h2 {
+        font-size: 2rem;
+    }
+    #presentation h2::after {
+        height: 3px;
+    }
+
+    /* FOOTER */
+    footer.page-footer {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
     }
     .footer-info {
         text-align: left;
+    }
+    footer.page-footer p,
+    footer.page-footer a {
+        font-size: .9rem;
     }
 }
 
 
 /* Breakpoint a cui farei la seguente modifica (lasciando 90% ai 992px) */
-/* @media screen and (min-width: 1200px) {
+/* Altriment tra i 992 e i 1140 il contenuto è attaccato ai bordi */
+@media screen and (min-width: 1200px) {
     .container {
         max-width: 1140px;
     }
-} */
+}
