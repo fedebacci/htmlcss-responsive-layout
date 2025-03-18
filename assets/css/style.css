@@ -6,6 +6,7 @@
 }
 body {
     font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
 }
 img {
     max-width: 100%;
@@ -17,7 +18,9 @@ a {
 ul {
     list-style-type: none;
 }
-
+b {
+    font-weight: 700;
+}
 
 
 /* DEBUG */
@@ -27,6 +30,9 @@ ul {
     /* padding: 5px; */
     background-color: #ff000022;
     border: 2px dashed red;
+}
+.card-media {
+    background-color: #333;
 }
 
 
@@ -110,24 +116,21 @@ section {
 .display-none {
     display: none;
 }
-/* @ TODO */
-/* Spostare insieme a tutte le altre media query */
-@media screen and (min-width: 768px) {
-    .display-md-inline-block {
-        display: inline-block;
-    }
-    .display-md-block {
-        display: block;
-    }
+
+
+
+/* GENERALI */
+p {
+    line-height: 1.66;
+    font-size: .9rem;
 }
-@media screen and (min-width: 992px) {
-    .display-lg-inline-block {
-        display: inline-block;
-    }
-}
+
 
 
 /* header.page-header */
+header.page-header {
+    padding: .5rem 1rem;
+}
 h1 {
     font-size: 2.25rem;
     text-transform: uppercase;
@@ -154,7 +157,7 @@ main {
 #recipe-preview h2 {
     color: #4E3969;
     font-size: 1.1rem;
-    margin: .5rem 0;
+    margin: .5rem 0 .75rem;
     font-weight: bold;
 }
 /* @ TODO */
@@ -220,19 +223,21 @@ main {
     font-weight: normal;
     position: relative;
     padding-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 #presentation h2::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 2px;
+    height: 1px;
     background-color: #FF9614;
     width: 4ch;
 }
 #presentation img {
     max-width: 70%;
     display: block;
+    /* margin: 0 auto 1rem; */
     margin: 1rem auto;
 }
 /* footer.page-footer */
@@ -240,12 +245,18 @@ footer.page-footer {
     background-color: #7C69A4;
     color: #fff;
     padding: 1rem;
-    font-size: .7rem;
     text-align: center;
     font-weight: normal;
 }
+footer.page-footer p {
+    font-size: .7rem !important;
+}
+footer.page-footer a {
+    font-size: .7rem !important;
+}
 .page-footer p.agency {
     font-weight: bold;
+    margin-bottom: .33rem;
 }
 .page-footer li {
     display: inline-block;
@@ -253,4 +264,67 @@ footer.page-footer {
 }
 .page-footer li a {
     text-decoration: underline;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    /* UTILITY */
+    .display-md-inline-block {
+        display: inline-block;
+    }
+    .display-md-block {
+        display: block;
+    }
+
+    /* Header */
+    h1 {
+        text-align: left;
+        font-size: 2.75rem;
+    }
+
+    /* #recipe-preview */
+    #recipe-preview ul li {
+        display: inline-block;
+        min-width: 33%;
+        padding-right: 1rem;
+    }
+
+    /* #presentation */
+    #presentation img {
+        max-width: 300px;
+        float: left;
+        margin: 0 .75rem 0 0;
+    }
+}
+@media screen and (min-width: 992px) {
+    /* UTILITY */
+    .container {
+        max-width: 1140px;
+    }
+    .display-lg-inline-block {
+        display: inline-block;
+    }
+
+    /* #recipe-preview */
+    #recipe-preview .card {
+        display: flex;
+    }
+    #recipe-preview .card-media {
+        width: 70%;
+    }
+    #recipe-preview .card-media img {
+        width: 100%;
+    }
+    #recipe-preview .card-details {
+        width: 30%;
+    }
+    #recipe-preview .card-details li {
+        /* display: block; */
+        display: list-item;
+    }
+}
+
+.card-media {
+    height: auto !important;    
 }
