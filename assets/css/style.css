@@ -112,6 +112,11 @@ section {
         display: inline-block;
     }
 }
+@media screen and (min-width: 992px) {
+    .display-lg-inline-block {
+        display: inline-block;
+    }
+}
 
 
 /* HEADER */
@@ -132,6 +137,7 @@ h1 {
 main {
     background-color: #F6F5F3;
 }
+/* #recipe-preview  */
 #recipe-preview p.recipe-category {
     text-transform: uppercase;
     font-size: .8rem;
@@ -140,7 +146,8 @@ main {
 #recipe-preview h2 {
     color: #4E3969;
     font-size: 1.1rem;
-    font-weight: 800;
+    margin: .5rem 0;
+    font-weight: bold;
 }
 /* @ TODO */
 /* Forse spostare regole sotto relative a card in utility? */
@@ -162,4 +169,33 @@ main {
 }
 .card ul li:not(:last-child) {
     margin-bottom: 1rem;
+}
+/* #social-buttons */
+#social-buttons .btn-social {
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+    background-color: #fff;
+    padding: .5rem .75rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.33);
+}
+.social-name {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.fa-facebook {
+    color: #1272F2;
+}
+.fa-twitter {
+    color: #009EFF;
+}
+.fa-instagram {
+    color: #EC9AB8;
+}
+.fa-pinterest {
+    color: #E41F1F;
+}
+.fa-youtube {
+    color: #E52121;
 }
